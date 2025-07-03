@@ -29,7 +29,7 @@ jobs:
         with:
           version: 'latest'
 
-           - name: Setup kubeconfig for GKE
+      - name: Setup kubeconfig for GKE
         run: |
           mkdir -p $HOME/.kube
           cat <<EOF > $HOME/.kube/config
@@ -51,6 +51,7 @@ jobs:
             user:
               token: ${{ secrets.KUBE_TOKEN }}
           EOF
+
 
       - name: Deploy to Kubernetes
         run: |
